@@ -1,0 +1,12 @@
+.titulo{
+    text-align: center;
+}
+.ficheros{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.criba{
+    width: 100%;
+    word-break:break-all;
+}
