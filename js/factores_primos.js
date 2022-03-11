@@ -21,16 +21,17 @@ export const descomposicion = (n) => {
         }
             
     }
-    console.log(ls);
+    return ls
 }
 
 // Verificar si es primo
 export const esPrimo = (n) => {
-    if(n <= 1){
+    if(n <= 1 || n % 2 == 0){
         return false
     }
     let noEsPrimo = false
     let i = 2
+    
     while (i <= Math.sqrt(n) && !noEsPrimo) {
         if (n%i == 0) {
             noEsPrimo = true

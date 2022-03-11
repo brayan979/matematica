@@ -29,6 +29,6 @@ export const division = (num1,num2) => {
         }
     }
     let mcm = BigInt((num1 * num2)/ mcd)
-    console.log('MCD: ', mcd ,' - MCM: ',mcm ,'')
+    return [mcm,mcd]
 }
 
