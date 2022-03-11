@@ -24,6 +24,10 @@ btnTartaglia.addEventListener('click', (e) => {
     console.log(formato(triangulo));
     generadorFichero(formato(triangulo),`tartaglia_n${triangulo.length-1}.txt`)
     inputTartaglia.value = ''
+/*     let gif = document.createElement('img')
+let elemento = document.querySelectorAll('.elemento')[0]
+gif.src = './fuego.gif'
+elemento.appendChild(gif) */
 })
 btnEratostenes.addEventListener('click',() => {
     divCriba.innerText = criba(generarLista(parseInt(inputCriba.value, 10)))
@@ -42,3 +46,6 @@ btnMcmMcd.addEventListener('click',() => {
     inputNum1.value = ''
 })
 
+
+
+//<img src="./fuego.gif" width="100px" height="100px" alt="">
