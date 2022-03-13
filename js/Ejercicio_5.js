@@ -68,5 +68,6 @@ export const formato = (triangulo) => {
         }
         textoCompleto += fila + '\n\n'
     }
+    
     return textoCompleto
 } 

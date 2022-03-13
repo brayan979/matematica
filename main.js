@@ -5,6 +5,7 @@ import {descomposicion} from './js/Ejercicio_8.js'
 
 let btnTartaglia = document.querySelector('.tartaglia')
 let inputTartaglia = document.querySelector('.inputTartaglia')
+let contenidoT = document.querySelector('.contenidoT')
 
 let btnEratostenes = document.querySelector('.eratostenes')
 let divCriba = document.querySelector('.criba')
@@ -21,26 +22,33 @@ let btnMcmMcd = document.querySelector('.btnMcmMcd')
 
 btnTartaglia.addEventListener('click', (e) => {
     let triangulo = filas(parseInt(inputTartaglia.value, 10) )
-    console.log(formato(triangulo));
-    generadorFichero(formato(triangulo),`tartaglia_n${triangulo.length-1}.txt`)
+    console.log(triangulo);
+    let formatoTexto = formato(triangulo)
+    generadorFichero(formatoTexto,`tartaglia_n${triangulo.length-1}.txt`)
+    contenidoT.innerText = formatoTexto
     inputTartaglia.value = ''
 })
 btnEratostenes.addEventListener('click',() => {
-    divCriba.innerText = criba(generarLista(parseInt(inputCriba.value, 10)))
+    let resultado = criba(generarLista(parseInt(inputCriba.value, 10)))
+    divCriba.innerText = 'Numero:'+inputCriba.value+ '\n'+resultado
     inputCriba.value = ''
 })
 
-btnDescomponer.addEventListener('click',() => {
-    contenedro__descomponer.innerText = descomposicion(parseInt(inputDescomponer.value, 10))
-    inputCriba.value = ''
-})
 
 btnMcmMcd.addEventListener('click',() => {
     let resultado = division(BigInt(inputNum1.value),BigInt(inputNum2.value))
-    contenedorMcmMcd.innerText = 'MCM: '+ resultado[0] + ' - MCD: '+resultado[1]
+    console.log(resultado);
+    contenedorMcmMcd.innerText = '\nNumeros: '+ inputNum1.value +' - '+ inputNum2.value +'\n  MCM('+ inputNum1.value+',' +inputNum2.value +') = '+ resultado[0] + '\n MCD('+ inputNum1.value+',' +inputNum2.value +') ='+resultado[1]
     inputNum2.value = ''
     inputNum1.value = ''
 })
 
 
 
+
+btnDescomponer.addEventListener('click',() => {
+    let resultado = descomposicion(parseInt(inputDescomponer.value, 10))
+    console.log(resultado);
+    contenedro__descomponer.innerText = '\n'+resultado.toString().replace(/,/g, '*')
+    inputCriba.value = ''
+})
