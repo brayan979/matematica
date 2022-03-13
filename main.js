@@ -1,7 +1,7 @@
-import {filas,generadorFichero,formato} from './js/tartaglia.js'
-import {criba,generarLista} from './js/eratostenes.js'
-import {division} from './js/mcm_mcd.js'
-import {descomposicion,esPrimo} from './js/factores_primos.js'
+import {filas,generadorFichero,formato} from './js/Ejercicio_5.js'
+import {criba,generarLista} from './js/Ejercicio_6.js'
+import {division} from './js/Ejercicio_7.js'
+import {descomposicion} from './js/Ejercicio_8.js'
 
 let btnTartaglia = document.querySelector('.tartaglia')
 let inputTartaglia = document.querySelector('.inputTartaglia')
@@ -24,10 +24,6 @@ btnTartaglia.addEventListener('click', (e) => {
     console.log(formato(triangulo));
     generadorFichero(formato(triangulo),`tartaglia_n${triangulo.length-1}.txt`)
     inputTartaglia.value = ''
-/*     let gif = document.createElement('img')
-let elemento = document.querySelectorAll('.elemento')[0]
-gif.src = './fuego.gif'
-elemento.appendChild(gif) */
 })
 btnEratostenes.addEventListener('click',() => {
     divCriba.innerText = criba(generarLista(parseInt(inputCriba.value, 10)))
@@ -48,4 +44,3 @@ btnMcmMcd.addEventListener('click',() => {
 
 
 
-//<img src="./fuego.gif" width="100px" height="100px" alt="">
