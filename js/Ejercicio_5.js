@@ -22,12 +22,13 @@ const conmutacion = (m) => {
     let filaSimetrica = [...fila]
     // Eliminar el ultimo elemento de los pares
     if(m % 2 == 0) filaSimetrica.pop()
+    // Junta las dos listas simetricas
     let filaCompleta = fila.concat(filaSimetrica.reverse())
 
 
     return filaCompleta
 }
-
+// Genera las conmutaciones de cada fila
 export const filas = (f) => {
     let triangulo = []
     triangulo.push([1])
@@ -53,7 +54,7 @@ export const generadorFichero = (texto, filename) => {
         elem.innerText = filename
     }
 }
-
+// Inserta el formato indicado en el enunciado para cada fila
 export const formato = (triangulo) => {
     let textoCompleto = ''
     for (let i = 0; i < triangulo.length; i++) {

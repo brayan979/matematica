@@ -1,6 +1,6 @@
 import {filas,generadorFichero,formato} from './js/Ejercicio_5.js'
 import {criba,generarLista} from './js/Ejercicio_6.js'
-import {division} from './js/Ejercicio_7.js'
+import {euclides} from './js/Ejercicio_7.js'
 import {descomposicion} from './js/Ejercicio_8.js'
 
 let btnTartaglia = document.querySelector('.tartaglia')
@@ -20,25 +20,42 @@ let inputNum1 = document.querySelector('.inputNum1')
 let contenedorMcmMcd = document.querySelector('.contenedorMcmMcd')
 let btnMcmMcd = document.querySelector('.btnMcmMcd')
 
+
+//  LO UNICO IMPORTANTE PARA ENTENDER LAS FUCIONES ESTA ENTRE LOS ASTERISCOS.  EL RESTO ES ESTÉTICA
+
 btnTartaglia.addEventListener('click', (e) => {
+    // ***********************************************
+    // Metodos del ejercicio 5
     let triangulo = filas(parseInt(inputTartaglia.value, 10) )
     console.log(triangulo);
     let formatoTexto = formato(triangulo)
     generadorFichero(formatoTexto,`tartaglia_n${triangulo.length-1}.txt`)
+    // ***********************************************
+
+    // Estetica
     contenidoT.innerText = formatoTexto
     inputTartaglia.value = ''
 })
 btnEratostenes.addEventListener('click',() => {
+    // ***********************************************
+    // Metodos del ejercicio 6
     let resultado = criba(generarLista(parseInt(inputCriba.value, 10)))
+    // ***********************************************
+    // Estetica
     divCriba.innerText = 'Numero:'+inputCriba.value+ '\n'+resultado
     inputCriba.value = ''
 })
 
 
 btnMcmMcd.addEventListener('click',() => {
-    let resultado = division(BigInt(inputNum1.value),BigInt(inputNum2.value))
+    // ***********************************************
+    // Metodos del ejercicio 7 
+    let resultado = euclides(BigInt(inputNum1.value),BigInt(inputNum2.value))
     console.log(resultado);
-    contenedorMcmMcd.innerText = '\nNumeros: '+ inputNum1.value +' - '+ inputNum2.value +'\n  MCM('+ inputNum1.value+',' +inputNum2.value +') = '+ resultado[0] + '\n MCD('+ inputNum1.value+',' +inputNum2.value +') ='+resultado[1]
+    // ***********************************************
+
+    // Estetica
+    contenedorMcmMcd.innerText = '\nNumeros: '+ inputNum1.value +' - '+ inputNum2.value +'\n  MCM('+ inputNum1.value+',' +inputNum2.value +') = '+ resultado[0] + '\n MCD('+ inputNum1.value+',' +inputNum2.value +') = '+resultado[1]
     inputNum2.value = ''
     inputNum1.value = ''
 })
@@ -47,8 +64,12 @@ btnMcmMcd.addEventListener('click',() => {
 
 
 btnDescomponer.addEventListener('click',() => {
+    // ***********************************************
+    // Metodos del ejercicio 8
     let resultado = descomposicion(parseInt(inputDescomponer.value, 10))
     console.log(resultado);
+    // ***********************************************
+    // Estetica
     contenedro__descomponer.innerText = '\n'+resultado.toString().replace(/,/g, '*')
     inputCriba.value = ''
 })
